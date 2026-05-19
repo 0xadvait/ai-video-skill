@@ -25,6 +25,87 @@ It also covers the *whole* job, not just the model call: generate a first
 frame, write the prompt, run it on the right model, synthesize voiceover,
 stitch the clips, upscale for delivery.
 
+## Showcase
+
+Real clips, real prompts — each generated with the structure this skill
+teaches. Open a prompt to see the 5-part craft.
+
+<table>
+<tr>
+<td width="50%" align="center"><img src="media/desert_convoy.gif" alt="Desert convoy" width="100%"/><br/><sub><b>Desert Convoy</b> · <code>seedance-2.0</code> · 21:9 · 15s</sub></td>
+<td width="50%" align="center"><img src="media/wet_track.gif" alt="Wet track" width="100%"/><br/><sub><b>Wet Track Green Light</b> · <code>seedance-2.0</code> · 16:9 · 15s</sub></td>
+</tr>
+</table>
+
+<details>
+<summary><b>Desert Convoy Before the Wall</b> — scale needs human pressure</summary>
+
+```text
+[00:00-00:05] Extreme wide IMAX 70mm desert shot in the Denis Villeneuve and
+Greig Fraser register: a tiny armored convoy races across hard salt flats
+while a mile-high sandstorm advances behind it, desaturated ochre palette,
+enormous negative space.
+[00:05-00:10] Cut inside the lead rover, medium close-up of the driver
+gripping the wheel at ten and two, dashboard amber reflected in the visor.
+Camera shakes with engine vibration. He says, "Do not slow down." Sand
+hammers the windshield.
+[00:10-00:15] Exterior low tracking shot as the rover crests a dune in real
+time, not slow motion. Dust swallows the frame, distant bass rumble, no gore,
+no text, hard cut to black.
+```
+</details>
+
+<details>
+<summary><b>Wet Track Green Light</b> — fixed hands reduce warping</summary>
+
+```text
+[00:00-00:05] Interior cockpit medium close-up of a veteran race driver at
+night, rain lashing the windshield, dashboard LEDs reflected in the visor. He
+tightens both gloved hands on the wheel at ten and two, breathing steady.
+[00:05-00:10] Cut to rival cockpit, younger driver in the next car, jaw
+tense, eyes forward, engine vibration shaking the frame. He whispers, "Hold
+the line."
+[00:10-00:15] Low exterior tracking shot as the green light hits and both
+cars accelerate in real time on wet asphalt. Massive water spray hits the
+lens, stadium lights stretch into motion blur, engines roar, no limb
+distortion, no text.
+```
+</details>
+
+<table>
+<tr>
+<td width="50%" align="center"><img src="media/steak_asmr.gif" alt="Steak ASMR" height="280"/><br/><sub><b>Cast-Iron Steak ASMR</b> · <code>seedance-2.0</code> · 9:16 · 8s</sub></td>
+<td width="50%" align="center"><img src="media/mercury_sphere.gif" alt="Mercury sphere" height="280"/><br/><sub><b>Mercury Sphere Loop</b> · <code>seedance-2.0</code> · 1:1 · 6s</sub></td>
+</tr>
+</table>
+
+<details>
+<summary><b>Cast-Iron Steak ASMR</b> — name the sound source</summary>
+
+```text
+Extreme macro close-up of a steak hitting a black cast-iron skillet,
+background fully blurred. Fat renders, bubbles along the crust, butter foams
+around rosemary and garlic, steam blooms into warm tungsten light. Slow
+dolly-in, probe-lens feel, razor-thin depth of field. Audio: aggressive
+sizzle, fat crackle, one tong clink at end, no music, no voice, no text.
+```
+</details>
+
+<details>
+<summary><b>Mercury Sphere Loop</b> — match first and last frames</summary>
+
+```text
+Loop-ready studio macro shot of a perfect liquid mercury sphere on a black
+mirror surface. Locked camera, centered composition, cool white strip lights
+reflected across the metal. Over 6 seconds the sphere slowly deforms into a
+rounded cube under an invisible force, then returns exactly to the original
+sphere shape by the final frame. First and last frames match for seamless
+playback. No text, no logo, no extra objects, no camera movement.
+```
+</details>
+
+All four prompts — and 26 more — ship in [`examples/prompts.json`](examples/prompts.json).
+
 ## Features
 
 <table>
@@ -141,6 +222,16 @@ figures in legitimate commentary or satire**, or **consenting, tagged
 collaborators** — never undisclosed impersonation of private individuals.
 Respect voice-provider restrictions when sourcing reference audio. See
 [`reference/real-person.md`](reference/real-person.md).
+
+## Contributing
+
+Issues and PRs welcome — new verified prompts for `examples/prompts.json`,
+model adapters in `scripts/generate.py`, and reference-doc corrections are all
+fair game. Keep prompt examples real (rendered, not invented).
+
+## License
+
+[MIT](LICENSE) © 2026 Advait Jayant.
 
 ---
 
