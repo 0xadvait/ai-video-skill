@@ -241,7 +241,7 @@ fair game. Keep prompt examples real (rendered, not invented).
 
 <div align="center">
 
-Built from the [ai-video-guide](https://github.com/0xadvait/ai-video-guide) research corpus.
+Built from the [ai-video-guide](https://ai-video-guide.vercel.app/) research corpus.
 
 🎬 Generated with [Claude Code](https://claude.com/claude-code)
 
