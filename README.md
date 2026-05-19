@@ -106,6 +106,10 @@ playback. No text, no logo, no extra objects, no camera movement.
 
 All four prompts — and 26 more — ship in [`examples/prompts.json`](examples/prompts.json).
 
+> 🎞️ **See the full results in motion** — the complete clip library, with
+> video previews and filterable prompts, lives at
+> **[ai-video-guide.vercel.app/library.html](https://ai-video-guide.vercel.app/library.html)**.
+
 ## Features
 
 <table>
