@@ -1,0 +1,339 @@
+{
+  "_meta": {
+    "description": "Verified Seedance 2.0 prompt library — 30 paste-ready prompts across 10 categories. Each entry's `input` is a valid Replicate request body for bytedance/seedance-2.0. Filter by `category` or `intent`.",
+    "categories": ["cinematic", "dialogue", "action", "dance", "sfx", "character-consistency", "motion-transfer", "lip-sync", "real-person", "abstract"],
+    "source": "PROMPT_LOGIC.md from the ai-video-guide corpus"
+  },
+  "prompts": [
+    {
+      "id": "cinematic_rain_phone_booth",
+      "category": "cinematic",
+      "intent": ["cinematic", "dialogue"],
+      "title": "Rain Phone Booth, 1990s Hong Kong",
+      "teaches": "One style anchor beats many.",
+      "input": {
+        "prompt": "[00:00-00:04] 1990s Hong Kong art-cinema tone piece. Medium shot through rain-streaked glass: a tired man in a khaki trench coat stands inside a red phone booth, holding the receiver without speaking. Neon smears red and green across the glass, Christopher Doyle handheld feel, Cinestill 800T halation.\n[00:04-00:07] Cut to extreme close-up of his lips and one eye reflected in the wet glass. He whispers, \"I kept the old number.\" Natural lip-sync, restrained emotion, rain ticking on metal.\n[00:07-00:10] He hangs up and steps into the rainy crowd. Step-printed motion blur, slow shutter drag, no subtitles, no on-screen text.",
+        "resolution": "1080p", "aspect_ratio": "16:9", "duration": 10, "generate_audio": true, "seed": 11001
+      }
+    },
+    {
+      "id": "cinematic_desert_convoy",
+      "category": "cinematic",
+      "intent": ["cinematic", "action"],
+      "title": "Desert Convoy Before the Wall",
+      "teaches": "Scale needs human pressure.",
+      "input": {
+        "prompt": "[00:00-00:05] Extreme wide IMAX 70mm desert shot in the Denis Villeneuve and Greig Fraser register: a tiny armored convoy races across hard salt flats while a mile-high sandstorm advances behind it, desaturated ochre palette, enormous negative space.\n[00:05-00:10] Cut inside the lead rover, medium close-up of the driver gripping the wheel at ten and two, dashboard amber reflected in the visor. Camera shakes with engine vibration. He says, \"Do not slow down.\" Sand hammers the windshield.\n[00:10-00:15] Exterior low tracking shot as the rover crests a dune in real time, not slow motion. Dust swallows the frame, distant bass rumble, no gore, no text, hard cut to black.",
+        "resolution": "1080p", "aspect_ratio": "21:9", "duration": 15, "generate_audio": true, "seed": 11002
+      }
+    },
+    {
+      "id": "cinematic_super8_pool",
+      "category": "cinematic",
+      "intent": ["cinematic"],
+      "title": "Super 8 Summer Pool Memory",
+      "teaches": "Single shots need one action.",
+      "input": {
+        "prompt": "Single continuous Super 8 home-movie shot, 1978 suburban pool party at golden hour. A child jumps once from the diving board into turquoise water while adults laugh out of focus behind patio chairs. Handheld 50mm equivalent, gate weave, dust specks, Kodak Ektachrome warmth, slight overexposure, water glittering in backlight. Audio: cicadas, pool splash, muffled laughter, no music, no modern objects, no text.",
+        "resolution": "720p", "aspect_ratio": "4:3", "duration": 8, "generate_audio": true, "seed": 11003
+      }
+    },
+    {
+      "id": "dialogue_classroom_confession",
+      "category": "dialogue",
+      "intent": ["dialogue", "character"],
+      "title": "Empty Classroom Confession",
+      "teaches": "Restraint improves lip-sync.",
+      "input": {
+        "prompt": "Medium close-up of a fictional Japanese high-school girl alone at a wooden classroom desk after sunset, summer uniform, straight black hair, silver hairpin, warm window light through blinds. Slow push-in. She looks at a half-written note, breathes in, then whispers with restrained embarrassment, \"I waited after class again.\" Dust motes, cicadas, soft pen scratch, no music, no subtitles, natural lip-sync.",
+        "resolution": "1080p", "aspect_ratio": "9:16", "duration": 8, "generate_audio": true, "seed": 12001
+      }
+    },
+    {
+      "id": "dialogue_diner_voicememo",
+      "category": "dialogue",
+      "intent": ["dialogue", "character"],
+      "title": "Diner Voice Memo",
+      "teaches": "Room tone sells dialogue.",
+      "input": {
+        "prompt": "[00:00-00:05] Locked medium close-up of a fictional night-shift waitress in an empty roadside diner, early 30s, tired eyes, blue uniform, coffee steam rising in foreground, sodium-vapor parking-lot light through rain on the window.\n[00:05-00:10] She raises her phone near her mouth, looks away from camera, and records softly, \"I am fine. I just miss home.\" Natural breath before the second sentence. Audio: refrigerator hum, rain on glass, distant truck passing, dialogue forward and clear, no subtitles.",
+        "resolution": "1080p", "aspect_ratio": "16:9", "duration": 10, "generate_audio": true, "seed": 12002
+      }
+    },
+    {
+      "id": "dialogue_rooftop_apology",
+      "category": "dialogue",
+      "intent": ["dialogue", "character"],
+      "title": "Rooftop Apology",
+      "teaches": "One shot, one turn.",
+      "input": {
+        "prompt": "Close-up of a fictional young man on an apartment rooftop at blue hour, wind lifting loose curls, plain gray hoodie, city lights blurred behind him. Camera is locked at eye level on an 85mm portrait lens, shallow depth of field, soft cool rim light and warm practical spill from the stairwell. He swallows, almost smiles, and says, \"I should have called sooner.\" Gentle wind, distant traffic, no music, no extra characters, no subtitles.",
+        "resolution": "720p", "aspect_ratio": "3:4", "duration": 6, "generate_audio": true, "seed": 12003
+      }
+    },
+    {
+      "id": "action_wet_track",
+      "category": "action",
+      "intent": ["action", "dialogue"],
+      "title": "Wet Track Green Light",
+      "teaches": "Fixed hands reduce warping.",
+      "input": {
+        "prompt": "[00:00-00:05] Interior cockpit medium close-up of a veteran race driver at night, rain lashing the windshield, dashboard LEDs reflected in the visor. He tightens both gloved hands on the wheel at ten and two, breathing steady.\n[00:05-00:10] Cut to rival cockpit, younger driver in the next car, jaw tense, eyes forward, engine vibration shaking the frame. He whispers, \"Hold the line.\"\n[00:10-00:15] Low exterior tracking shot as the green light hits and both cars accelerate in real time on wet asphalt. Massive water spray hits the lens, stadium lights stretch into motion blur, engines roar, no limb distortion, no text.",
+        "resolution": "1080p", "aspect_ratio": "16:9", "duration": 15, "generate_audio": true, "seed": 13001
+      }
+    },
+    {
+      "id": "action_pov_arena",
+      "category": "action",
+      "intent": ["action"],
+      "title": "POV Arena Shield Bash",
+      "teaches": "POV needs continuity rules.",
+      "input": {
+        "prompt": "Single continuous POV gladiator shot, no cuts, no zoom, natural head movement. The camera stands on sand inside a roaring arena. One armored opponent sprints toward camera with a raised sword. The camera braces; a round shield enters frame and slams into him once. He falls out of frame as sand kicks up. Camera turns right to reveal another fighter. Raw handheld realism, real-time pace, metal impact, crowd roar, breathing, no gore, no subtitles.",
+        "resolution": "720p", "aspect_ratio": "16:9", "duration": 8, "generate_audio": true, "seed": 13002
+      }
+    },
+    {
+      "id": "action_water_thunder",
+      "category": "action",
+      "intent": ["action", "cinematic"],
+      "title": "Water Versus Thunder Clash",
+      "teaches": "Effects need simple poses.",
+      "input": {
+        "prompt": "[00:00-00:04] Moonlit forest, live-action anime adaptation look, dark samurai wardrobe, no gore. A swordsman lowers his center of gravity and draws one blade; blue water spirals around the steel as leaves lift from the mud.\n[00:04-00:08] Opponent crouches in an iaijutsu posture and launches forward in a sharp Z-shaped thunder dash, golden arcs scattering wet leaves, medium speed to preserve body form.\n[00:08-00:12] Their swords meet at center frame. Water and lightning collide into a blue-gold pressure wave, mud splashes toward camera, bass impact and thunder crack, no extra limbs, no text.",
+        "resolution": "1080p", "aspect_ratio": "21:9", "duration": 12, "generate_audio": true, "seed": 13003
+      }
+    },
+    {
+      "id": "dance_vertical_mv",
+      "category": "dance",
+      "intent": ["dance", "character"],
+      "title": "Vertical Character Dance MV",
+      "teaches": "Choreography beats mood.",
+      "input": {
+        "prompt": "Generate a 15-second vertical live-action dance MV using the person or character from [Image1]. [Image1] defines face, hairstyle, outfit colors, and silhouette. Only one dancer, centered, feet visible in full-body shots. Soft natural light, realistic fabric sway, shallow depth of field.\n[00:00-00:05] Full-body intro groove at 100 BPM, small shoulder bounce, knees bending lightly, hands close to torso.\n[00:05-00:10] Beat-locked cuts between above-knees frame, face close-up, and feet doing two clean side steps; no jumps, no wide arm swings.\n[00:10-00:15] Slow turn, hair sways, end in a lingering signature pose. Native pop beat, soft room reflections, no subtitles.",
+        "resolution": "1080p", "aspect_ratio": "9:16", "duration": 15, "generate_audio": true, "reference_images": ["<image1.jpg>"], "seed": 14001
+      }
+    },
+    {
+      "id": "dance_rooftop_footwork",
+      "category": "dance",
+      "intent": ["dance"],
+      "title": "Rooftop Footwork Loop",
+      "teaches": "Counts stabilize feet.",
+      "input": {
+        "prompt": "Single dancer on a concrete rooftop at sunset, full-body vertical framing, feet visible throughout. He performs a clean four-count shuffle: right foot taps out, left foot crosses, both heels pivot, small shoulder pop, then repeats once. Camera is locked, 35mm equivalent, no zoom. Warm rim light, city skyline soft in background, upbeat 110 BPM house groove, shoe squeaks lightly on concrete, natural hands, no extra fingers, no text.",
+        "resolution": "720p", "aspect_ratio": "9:16", "duration": 8, "generate_audio": true, "seed": 14002
+      }
+    },
+    {
+      "id": "dance_ballroom_beat_cut",
+      "category": "dance",
+      "intent": ["dance", "cinematic"],
+      "title": "Ballroom Beat Cut",
+      "teaches": "One partnered move per shot.",
+      "input": {
+        "prompt": "[00:00-00:04] Wide shot of a fictional ballroom couple in red and black formalwear on a marble floor, audience blurred in bokeh. They hold frame and sway once to a slow Latin rhythm.\n[00:04-00:08] Medium tracking orbit as the lead guides one controlled spin; the red dress hem arcs through the light, feet remain natural.\n[00:08-00:12] Close two-shot as they settle into a dip and hold eye contact. Brass percussion, soft crowd murmur, beat-synced camera cuts, no impossible lifts, no subtitles.",
+        "resolution": "1080p", "aspect_ratio": "16:9", "duration": 12, "generate_audio": true, "seed": 14003
+      }
+    },
+    {
+      "id": "sfx_steak_asmr",
+      "category": "sfx",
+      "intent": ["sfx"],
+      "title": "Cast-Iron Steak ASMR",
+      "teaches": "Name the sound source.",
+      "input": {
+        "prompt": "Extreme macro close-up of a steak hitting a black cast-iron skillet, background fully blurred. Fat renders, bubbles along the crust, butter foams around rosemary and garlic, steam blooms into warm tungsten light. Slow dolly-in, probe-lens feel, razor-thin depth of field. Audio: aggressive sizzle, fat crackle, one tong clink at end, no music, no voice, no text.",
+        "resolution": "1080p", "aspect_ratio": "9:16", "duration": 8, "generate_audio": true, "seed": 15001
+      }
+    },
+    {
+      "id": "sfx_jazz_keys",
+      "category": "sfx",
+      "intent": ["sfx", "cinematic"],
+      "title": "Smoky Jazz Keys",
+      "teaches": "Place every instrument.",
+      "input": {
+        "prompt": "Close-up of a jazz pianist's hands moving across a grand piano in a small smoky club, amber stage lamps reflected in black lacquer, 35mm film grain, shallow depth of field. Fingers move with believable precision but never extreme close macro. Each phrase produces a subtle warm ripple across the piano surface. Audio: piano forward and dry, soft brushed snare behind, walking double bass off-camera, low audience murmur, no vocals, no subtitles.",
+        "resolution": "1080p", "aspect_ratio": "16:9", "duration": 10, "generate_audio": true, "seed": 15002
+      }
+    },
+    {
+      "id": "sfx_storm_dashcam",
+      "category": "sfx",
+      "intent": ["sfx", "action"],
+      "title": "Storm-Chaser Dashcam",
+      "teaches": "Perspective shapes sound.",
+      "input": {
+        "prompt": "Dashboard-camera POV in a storm-chaser truck approaching a tornado on an empty rural road. Fixed wide lens through rain-streaked windshield, wipers crossing twice, vehicle vibration, gray-green sky, lightning inside the funnel. Rain escalates from steady to violent. Audio: loud windshield rain, rhythmic wipers, low wind buffeting, distant radio chatter saying \"rotation is tightening\", no music, no text.",
+        "resolution": "1080p", "aspect_ratio": "16:9", "duration": 12, "generate_audio": true, "seed": 15003
+      }
+    },
+    {
+      "id": "character_nine_frame_bible",
+      "category": "character-consistency",
+      "intent": ["character", "multimodal"],
+      "title": "Nine-Frame Character Bible Walk",
+      "teaches": "Assign reference jobs.",
+      "input": {
+        "prompt": "Use [Image1], [Image2], [Image3], and [Image4] only for the same fictional woman's face, hairline, eye shape, and expressions. Use [Image5] for her blue jacket wardrobe. Use [Image6], [Image7], [Image8], and [Image9] as environment and lighting references. Preserve identity throughout.\n[00:00-00:05] Medium shot as she walks through the rainy street from [Image6], blue jacket unchanged, soft neon reflections.\n[00:05-00:10] Cut to a warm train carriage inspired by [Image7], same face and jacket, slow push-in.\n[00:10-00:15] Cut to rooftop blue hour matching [Image8] and [Image9], she turns to camera and smiles once. Ambient rain-to-train-to-wind sound bridge, no dialogue, no text.",
+        "resolution": "1080p", "aspect_ratio": "16:9", "duration": 15, "generate_audio": true, "reference_images": ["<img1.jpg>", "<img2.jpg>", "<img3.jpg>", "<img4.jpg>", "<img5.jpg>", "<img6.jpg>", "<img7.jpg>", "<img8.jpg>", "<img9.jpg>"], "seed": 16001
+      }
+    },
+    {
+      "id": "character_painting_traversal",
+      "category": "character-consistency",
+      "intent": ["character", "multimodal"],
+      "title": "Painting Traversal With Locked Face",
+      "teaches": "Protect identity from style.",
+      "input": {
+        "prompt": "A fictional girl steps through nine painted worlds while her face, hair, and yellow raincoat remain consistent. [Image1] defines her face and hair; [Image2] defines the yellow raincoat; [Image3] through [Image9] define painterly environments only, not her identity.\n[00:00-00:04] Medium shot: she steps out of the first painting, brushstrokes moving around her.\n[00:04-00:08] Match cut through three painted rooms, her face unchanged, medium close-up framing.\n[00:08-00:12] She reaches the final night cafe painting and looks back. Soft canvas rustle, light footstep taps, no spoken dialogue, no on-screen text.",
+        "resolution": "1080p", "aspect_ratio": "9:16", "duration": 12, "generate_audio": true, "reference_images": ["<img1.jpg>", "<img2.jpg>", "<img3.jpg>", "<img4.jpg>", "<img5.jpg>", "<img6.jpg>", "<img7.jpg>", "<img8.jpg>", "<img9.jpg>"], "seed": 16002
+      }
+    },
+    {
+      "id": "character_product_mascot",
+      "category": "character-consistency",
+      "intent": ["character", "multimodal", "product"],
+      "title": "Product Mascot Across Ads",
+      "teaches": "Separate shape and style.",
+      "input": {
+        "prompt": "Use [Image1] and [Image2] for the same original mascot character's face, proportions, and color palette. Use [Image3] for packaging shape and [Image4] for the clean studio lighting style.\n[00:00-00:03] Centered product-table shot, mascot peeks from behind the package, exact colors preserved.\n[00:03-00:07] Medium shot, mascot slides the package forward with simple hands, no finger detail, white seamless background.\n[00:07-00:10] Hero pose beside the package, soft shadow, gentle camera push-in. Audio: small fabric rustle, cheerful two-note synth sting, no voice, no labels or text.",
+        "resolution": "720p", "aspect_ratio": "1:1", "duration": 10, "generate_audio": true, "reference_images": ["<img1.jpg>", "<img2.jpg>", "<img3.jpg>", "<img4.jpg>"], "seed": 16003
+      }
+    },
+    {
+      "id": "motion_replace_dancer",
+      "category": "motion-transfer",
+      "intent": ["motion-transfer", "multimodal", "dance"],
+      "title": "Replace Dancer, Keep Groove",
+      "teaches": "Split motion from identity.",
+      "input": {
+        "prompt": "Keep the body timing, rhythm, and camera movement of [Video1], but replace the dancer with the original character from [Image1]. [Image1] defines face, hairstyle, outfit, colors, and silhouette. Preserve the same step sequence from [Video1]: small side steps, shoulder bounce, half-turn, final pose. Make the motion natural for this character, with stable hands and feet, centered vertical composition. Native upbeat pop beat matching the movement, no subtitles, no text.",
+        "resolution": "1080p", "aspect_ratio": "9:16", "duration": 8, "generate_audio": true, "reference_images": ["<img1.jpg>"], "reference_videos": ["<motion.mp4>"], "seed": 17001
+      }
+    },
+    {
+      "id": "motion_product_orbit",
+      "category": "motion-transfer",
+      "intent": ["motion-transfer", "multimodal", "product"],
+      "title": "Product Orbit From Reference Move",
+      "teaches": "Video can guide camera only.",
+      "input": {
+        "prompt": "Use [Video1] only for camera orbit timing and speed. Replace the subject with the product in [Image1], keeping exact shape, material, and color. Clean studio hero shot: camera orbits 120 degrees, reflections glide across the surface, matte charcoal background. Subtle electronic hum, one soft bass hit on the final centered frame, no voice, no labels, no extra objects.",
+        "resolution": "1080p", "aspect_ratio": "16:9", "duration": 6, "generate_audio": true, "reference_images": ["<product.jpg>"], "reference_videos": ["<orbit.mp4>"], "seed": 17002
+      }
+    },
+    {
+      "id": "motion_stunt_safer_body",
+      "category": "motion-transfer",
+      "intent": ["motion-transfer", "multimodal", "action"],
+      "title": "Stunt Motion, Safer Body",
+      "teaches": "Counted actions reduce warp.",
+      "input": {
+        "prompt": "Use [Video1] for parkour timing and shoulder-cam follow, but simplify body mechanics for the fictional athlete from [Image1]. [Image1] defines face, outfit, and proportions. The athlete runs three steps, plants the left foot, vaults one low concrete barrier, and lands cleanly. Real-time pace, no flips, no limb stretch. Audio: footsteps, breath, jacket fabric, city ambience, no music.",
+        "resolution": "720p", "aspect_ratio": "16:9", "duration": 10, "generate_audio": true, "reference_images": ["<athlete.jpg>"], "reference_videos": ["<parkour.mp4>"], "seed": 17003
+      }
+    },
+    {
+      "id": "lipsync_studio_monologue",
+      "category": "lip-sync",
+      "intent": ["lip-sync", "multimodal", "dialogue"],
+      "title": "Studio Monologue From Voice Clip",
+      "teaches": "Audio timing, text meaning.",
+      "input": {
+        "prompt": "Locked medium close-up of the fictional woman from [Image1] in a podcast studio, front three-quarter angle, mouth visible, headphones on, soft key from camera-left, dim purple practical behind. She speaks the exact line in [Audio1], matching mouth movements, with the intended words: \"We need to talk about tomorrow.\" Dialogue forward, room tone soft underneath, no music, no subtitles, no head turn.",
+        "resolution": "1080p", "aspect_ratio": "9:16", "duration": 6, "generate_audio": true, "reference_images": ["<face.jpg>"], "reference_audios": ["<voice.mp3>"], "seed": 18001
+      }
+    },
+    {
+      "id": "lipsync_animated_character",
+      "category": "lip-sync",
+      "intent": ["lip-sync", "multimodal", "character"],
+      "title": "Animated Character Voice-to-Face",
+      "teaches": "Keep the mouth readable.",
+      "input": {
+        "prompt": "Square close-up portrait of the original animated character from [Image1], reinterpreted as polished 3D animation while preserving face shape, hair, eyes, and outfit colors. The character looks directly at camera and lip-syncs to [Audio1], saying \"That was not in the plan.\" Small eyebrow lift on the final word, simple head stillness, clean studio background, dialogue clear, no extra captions, no music.",
+        "resolution": "720p", "aspect_ratio": "1:1", "duration": 5, "generate_audio": true, "reference_images": ["<character.jpg>"], "reference_audios": ["<line.mp3>"], "seed": 18002
+      }
+    },
+    {
+      "id": "lipsync_video_plus_audio",
+      "category": "lip-sync",
+      "intent": ["lip-sync", "multimodal", "dialogue"],
+      "title": "Video Reference Plus Audio Line",
+      "teaches": "One purpose per reference.",
+      "input": {
+        "prompt": "Use [Image1] for the fictional man's face, hair, and wardrobe. Use [Video1] only for the slow seated lean-in and camera framing. He sits at a warm podcast desk, medium close-up, condenser microphone in foreground. He lip-syncs exactly to [Audio1], saying \"I read the abstract twice.\" Keep the mouth visible, no hand covering face, shallow depth of field, soft studio room tone, no score, no subtitles.",
+        "resolution": "1080p", "aspect_ratio": "16:9", "duration": 8, "generate_audio": true, "reference_images": ["<face.jpg>"], "reference_videos": ["<leanin.mp4>"], "reference_audios": ["<line.mp3>"], "seed": 18003
+      }
+    },
+    {
+      "id": "realperson_founder_reaction",
+      "category": "real-person",
+      "intent": ["real-person", "multimodal", "lip-sync"],
+      "title": "Tagged Founder Reaction Shot",
+      "teaches": "Consent, short line, MCU.",
+      "input": {
+        "prompt": "Participatory creator-commentary shot featuring the tagged founder represented by [Image1], used with permission. Locked vertical medium close-up in a startup office, chest-up, front-three-quarter face, mouth visible, gray hoodie, laptop glow low on the face. The founder reacts to off-screen news and lip-syncs to [Audio1], saying \"Wait, they raised at what valuation?\" Dialogue forward, faint office HVAC, no music, no subtitles, no endorsement claim.",
+        "resolution": "1080p", "aspect_ratio": "9:16", "duration": 5, "generate_audio": true, "reference_images": ["<founder.jpg>"], "reference_audios": ["<line.mp3>"], "seed": 19001
+      }
+    },
+    {
+      "id": "realperson_buzzer_exchange",
+      "category": "real-person",
+      "intent": ["real-person", "multimodal", "dialogue"],
+      "title": "Founder-Investor Buzzer Exchange",
+      "teaches": "Cross-cut real people.",
+      "input": {
+        "prompt": "Participatory Silicon-Mania-style founder-investor parody; both people are tagged collaborators. [Image1] defines the founder's face, hair, and wardrobe. [Image2] defines the investor. Cross-cut medium close-ups only, one person on screen at a time, same red-lit pitch room, locked LUT: slightly desaturated, blue-magenta shadows, fine grain.\n[00:00-00:05] Founder MCU, warm key from camera-left, says \"It is cake as a service.\"\n[00:05-00:10] Investor reverse MCU, same lens and lighting, deadpan, says \"How is that venture scale?\"\n[00:10-00:15] Founder MCU, tiny nervous smile, says \"The frosting has AI.\" Ambient room tone, soft buzzer hum under final line, no subtitles, no public-figure impersonation beyond the cited collaborators.",
+        "resolution": "1080p", "aspect_ratio": "16:9", "duration": 15, "generate_audio": true, "reference_images": ["<founder.jpg>", "<investor.jpg>"], "seed": 19002
+      }
+    },
+    {
+      "id": "realperson_broll_insert",
+      "category": "real-person",
+      "intent": ["real-person", "multimodal"],
+      "title": "B-Roll Continuity Insert",
+      "teaches": "B-roll hides continuity risk.",
+      "input": {
+        "prompt": "B-roll continuity shot for the same founder-investor episode. Use [Image1] and [Image2] only for wardrobe and lighting continuity, not close face generation. Empty red-lit pitch-room table: two water glasses, one laptop, small glowing buzzer center frame, blurred silhouettes at edges, no readable faces. Locked 50mm slow push-in, same desaturated blue-magenta LUT, fine grain, HVAC, chair creak, no dialogue, no music, no text.",
+        "resolution": "1080p", "aspect_ratio": "16:9", "duration": 6, "generate_audio": true, "reference_images": ["<founder.jpg>", "<investor.jpg>"], "seed": 19003
+      }
+    },
+    {
+      "id": "abstract_interface_bloom",
+      "category": "abstract",
+      "intent": ["abstract", "motion-graphics"],
+      "title": "Black-Line Interface Bloom",
+      "teaches": "Sequence the abstraction.",
+      "input": {
+        "prompt": "Pure black background, self-illuminating white geometric lines only, Vercel-style precision. [00:00-00:02] A white point pulses at center, ripple rings expand. [00:02-00:04] The point stretches into a line, then tiles into a 3x3 grid. [00:04-00:06] Grid bends into a rotating wireframe sphere. [00:06-00:08] Sphere unfolds into UI panels around a clean abstract mark, no readable letters. Audio: minimal ticks, one soft sub pulse, no voice.",
+        "resolution": "1080p", "aspect_ratio": "16:9", "duration": 8, "generate_audio": true, "seed": 20001
+      }
+    },
+    {
+      "id": "abstract_mercury_sphere",
+      "category": "abstract",
+      "intent": ["abstract", "motion-graphics", "loop"],
+      "title": "Mercury Sphere Loop",
+      "teaches": "Match first and last frames.",
+      "input": {
+        "prompt": "Loop-ready studio macro shot of a perfect liquid mercury sphere on a black mirror surface. Locked camera, centered composition, cool white strip lights reflected across the metal. Over 6 seconds the sphere slowly deforms into a rounded cube under an invisible force, then returns exactly to the original sphere shape by the final frame. First and last frames match for seamless playback. No text, no logo, no extra objects, no camera movement.",
+        "resolution": "1080p", "aspect_ratio": "1:1", "duration": 6, "generate_audio": false, "seed": 20002
+      }
+    },
+    {
+      "id": "abstract_living_impasto",
+      "category": "abstract",
+      "intent": ["abstract", "cinematic"],
+      "title": "Living Impasto Night",
+      "teaches": "Let medium drive motion.",
+      "input": {
+        "prompt": "Living post-impressionist oil painting, thick impasto texture, saturated blue-yellow contrast, swirling brushstrokes. A night sky above a small sleeping town moves as if the wet paint itself is breathing. The cypress tree twists like a dark flame, yellow stars rotate in slow circular strokes, window lights pulse gently. Camera is locked, no 3D realism, no modern objects, no readable text. Audio: faint canvas creak, soft wind-like drone, no melody, painterly motion only.",
+        "resolution": "1080p", "aspect_ratio": "4:3", "duration": 12, "generate_audio": true, "seed": 20003
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "_meta": "Personal avatar + voice profile TEMPLATE. Copy this file to profile.json (same directory) and fill in your own assets. The skill loads profile.json — never this example — for 'a video of me / my avatar / in my voice' requests. profile.json is git-ignored so personal data stays off any remote.",
+  "name": "Your Name",
+  "avatar": {
+    "image": "/absolute/path/to/your/avatar.png",
+    "alternates": [],
+    "look": "Describe the avatar — wardrobe, setting, lighting, framing.",
+    "rules": [
+      "Keep the face, head and identity 100% unchanged and exact.",
+      "Keep the mouth unobstructed so lip-sync stays clean.",
+      "State any look preferences (e.g. stylized studio vs raw realism)."
+    ]
+  },
+  "voice": {
+    "name": "Your voice",
+    "elevenlabs_voice_id": "YOUR_ELEVENLABS_VOICE_ID",
+    "sample": "/absolute/path/to/your/voice-sample.mp3",
+    "generate_with": "scripts/tts.py"
+  },
+  "model_preferences": {
+    "talking_avatar_default": "wan-2.7-i2v",
+    "talking_avatar_alternate": "omnihuman-1.5",
+    "avoid": [],
+    "notes": "Set your preferred talking-avatar model and any models to avoid."
+  }
+}

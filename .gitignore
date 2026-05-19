@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Generation output (created at runtime, never committed)
+seedance_out/
+*_out/
+review/
+manifest.json
+generate.log
+
+# Stray media — the skill produces these; keep the repo lean
+*.mp4
+*.mov
+*.webm
+*.wav
+# (examples/ and reference/ are text-only; nothing to ignore there)
+
+# Personal profile — your real avatar/voice config stays local.
+# Ship profile.example.json; users copy it to profile.json themselves.
+profile/profile.json
+
+# OS
+.DS_Store
