@@ -2,7 +2,7 @@
 
 This document describes the practical, end-to-end workflow for creators producing short-form video that features recognizable public figures (CEOs, politicians, athletes, actors) saying or doing specific things — the format pioneered by accounts like [@siliconmania](https://x.com/siliconmania) on X and the broader genre of AI-assisted tech satire and commentary. The focus is on what creators actually do to ship a clip, with Seedance 2.0 as the central engine and the rest of the stack scaffolded around it.
 
-The schema reference for Seedance 2.0 throughout this doc is `/Users/advaitjayant/random/opengradient/seedance-guide/research/00_canonical_schema.md`. The canonical citation syntax in the prompt is **`[Image1]`, `[Video1]`, `[Audio1]`** (square brackets) — many third-party guides use `@image1`, but the Replicate input schema uses brackets, which is what we use below.
+The schema reference for Seedance 2.0 throughout this doc is [`reference/schema.md`](schema.md). The canonical citation syntax in the prompt is **`[Image1]`, `[Video1]`, `[Audio1]`** (square brackets) — many third-party guides use `@image1`, but the Replicate input schema uses brackets, which is what we use below.
 
 ---
 
