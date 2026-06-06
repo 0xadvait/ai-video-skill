@@ -66,3 +66,35 @@ lesson that supersedes it and note the conflict — don't silently overwrite.
   height — never across the mouth/chin — or lip-sync degrades. Keep facial
   identity 100% faithful across every shot.
   EVIDENCE: avatar accepted once the mouth was unobstructed.
+
+- 2026-06-05 · gemini-3-pro-image-preview (Nano Banana 2) · first-frame still · overall 5/5
+  LESSON: Best current photoreal first-frame/hero plate is Gemini "Nano Banana 2"
+  = gemini-3-pro-image-preview (generateContent, responseModalities:["IMAGE"],
+  base64 inlineData). gemini-3.1-pro-preview is GEO-BLOCKED on the free key
+  ("Image generation is not available in your country") — fall back to
+  3-pro-image-preview. Generate ~3 concept variants and let the user pick BEFORE
+  spending the i2v that animates it.
+  EVIDENCE: 3 gallery-hero variants; user picked the golden-atrium one as the
+  i2v first frame.
+
+- 2026-06-05 · grok-imagine-video (xai, Replicate) · image-to-video · overall 4/5
+  LESSON: For "step INTO a still", Replicate `xai/grok-imagine-video` gives a
+  clean forward dolly (input: image as data-URI + prompt + duration 1-15 +
+  aspect_ratio). Prompt the camera explicitly AND redundantly —
+  "the camera glides smoothly and steadily forward the whole time" + subject
+  walking AWAY from camera — or it drifts/holds. Keep the "comes alive" beat
+  ~3-4s; 6s+ reads as too long. Not yet wired into generate.py routing — call
+  the Replicate model directly.
+  EVIDENCE: gallery-walk i2v from a Nano-Banana-2 still, used as the hero
+  "image comes alive" beat in a HyperFrames product demo.
+
+- 2026-06-05 · pipeline · compose-not-stitch · overall 5/5
+  LESSON: When the deliverable is a designed / cursor-driven piece (product demo,
+  UI walkthrough, kinetic typography) — not just stitched AI footage — build it
+  in HyperFrames (HTML→MP4) and drop AI stills/clips in as timeline assets, not
+  assemble.py. See reference/hyperframes-motion-demos.md. Always do a
+  frame-by-frame QC pass on dense ffmpeg grids; if your context can no longer
+  load images, delegate the QC to a fresh-context subagent (its own image budget).
+  EVIDENCE: OpenGradient Image Studio demo — Nano Banana 2 stills + grok i2v
+  composed in HyperFrames, QC'd frame-by-frame by a subagent that caught a
+  double-exposure ghost frame + an aimless cursor move I couldn't see.

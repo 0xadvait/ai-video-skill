@@ -217,6 +217,11 @@ generation.
   consent norms, paste-ready figure prompts.
 - `reference/failure-modes.md` — the 15 failure modes + fixes + the
   classifier-flag escalation path.
+- `reference/hyperframes-motion-demos.md` — when the deliverable is a *composed* /
+  cursor-driven piece (product demo, UI walkthrough, kinetic typography, title/end
+  cards), build it in **HyperFrames** (HTML→MP4) and drop AI stills/clips in as
+  timeline assets — instead of stitching with `assemble.py`. Distilled craft +
+  cursor / transition / frame-by-frame-QC gotchas from real builds.
 - `examples/prompts.json` — verified prompt library, filterable by intent.
 
 ## Scripts
