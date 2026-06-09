@@ -15,10 +15,10 @@ gotchas from real product-demo builds.
 - A composition is one HTML file: `data-*` timing + a GSAP timeline registered on
   `window.__timelines["main"]` (built `{paused:true}`) + CSS. `data-duration` on the
   root drives length (not the GSAP timeline length).
-- **Run the real binary.** `npx`/`npm` are commonly shell-aliased (Socket wrapper) —
-  call `/Users/advaitjayant/.hermes/node/bin/npx hyperframes …` directly, or the CLI
-  silently does the wrong thing. Commands: `lint`, `inspect`, `snapshot --at 1.5,4`,
-  `render`.
+- **Run the real binary.** `npx`/`npm` may be shell-aliased (e.g. a Socket security
+  wrapper) — if so, call the actual Node `npx` directly (find it with `which -a npx`,
+  e.g. `~/.<node-install>/bin/npx hyperframes …`), or the CLI silently does the wrong
+  thing. Commands: `lint`, `inspect`, `snapshot --at 1.5,4`, `render`.
 - **Deterministic only** — no `Date.now()`, `Math.random()`, no network fetches at
   render time. Seed any pseudo-randomness; pass timestamps in.
 - **Hidden initial state belongs in CSS/attrs, NOT a late `tl.set(sel,{opacity:0},0)`.**
@@ -28,6 +28,11 @@ gotchas from real product-demo builds.
   A ported background shader canvas is native 3840×2160 — it (and any full-frame CSS
   `filter: blur`) is the render cost; expect ~60–90s. Mux music afterward:
   `ffmpeg -i v.mp4 -i music.mp3 -filter_complex "[1:a]volume=0.62,afade=t=in:st=0:d=1.5,afade=t=out:st=<end-3.5>:d=3.5,apad[a]" -map 0:v:0 -map "[a]" -t <dur> -c:v copy -c:a aac -b:a 256k -movflags +faststart out.mp4`.
+- **Avoid full-frame linear gradients on dark** — H.264 bands them visibly. Use a
+  radial gradient, or a solid fill + a localized glow.
+- **Always run `hyperframes inspect`** (not just eyeball a contact sheet) before
+  declaring done — it catches text overflowing a card / off-canvas drift you'll miss.
+  The only "expected" overflow is a deliberately scrolling marquee.
 
 ## The "premium product demo" look (what actually lands)
 Modeled on Ritual/Ollie-style demos tuned for phone-feed legibility. The levers that
@@ -50,6 +55,34 @@ repeatedly worked:
 - **Port the real design** — exact colors, fonts (Geist…), and the real logo *file* —
   from the source repo. Inventing a "close enough" page or logo gets rejected ("wrong
   logo" twice).
+
+## Legibility & narrative (for a social / phone feed)
+- **One idea on screen per beat**, big and high-contrast; hold each ~2–2.5s. Don't
+  stack three things — push into the single thing that matters.
+- **Length is flexible** — reading time beats hitting an exact round number (30s).
+  Cut to the rhythm of comprehension, not a stopwatch. When in doubt, tighten.
+- **Show, don't tell.** Animate the actual transformation (a request card travels a
+  pipeline and visibly locks/redacts; an image resolves in) rather than narrating it
+  with captions. Captions support the visual, they don't replace it.
+- **Annotate the payoff, on-brand.** A ring-flash on the thing that just changed, or
+  an underline drawn under the one payoff line, directs the eye — Ollie-style, but in
+  the product's own palette.
+- **Borrow a reference's STRUCTURE, not its gimmicks.** Steal the pacing and the
+  camera-push discipline; drop the hand-cursor / sticky-notes / red-marker bits if
+  they're off-brand for a premium product.
+
+## UI-state composition & using the real product
+- **Use the product's REAL models / assets / design**, never generic stand-ins. (For
+  an image-tool demo, generate the hero from the *actual* models the app ships —
+  reaching for a default like Flux when the app uses its own models got flagged hard.)
+- **Declutter every state.** Cut suggestion chips, "Generating…" loaders, and literal
+  intermediate steps that add nothing — they read as clutter and slow the piece.
+- **Compose each UI state as ONE balanced, centred group.** A composer floating
+  mid-screen with dead space below "looked gross"; title + input + subline as a single
+  vertically-centred stack reads clean.
+- **Put the result where the real app puts it.** A generated image should arrive in the
+  app's real result view (in-canvas, with its real chrome), not as a card floating over
+  the background — make it "arrive at the right place."
 
 ## Cursor discipline (the single most-flagged thing across builds)
 - **Measure targets at runtime; never hardcode pixel coords.** When you restructure a
