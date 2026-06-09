@@ -21,6 +21,8 @@ Models:
     veo-3.1         Google Gemini veo-3.1              (native audio, top realism)
     veed-fabric-1.0 fal veed/fabric-1.0                (image+audio talking video)
     omnihuman-1.5   fal bytedance/omnihuman            (image+audio realistic avatar)
+    grok-imagine-video-1.5  Replicate xai/grok-imagine-video-1.5
+                                        (image-to-video only, native audio)
     auto            route by intent (default)
 
 --model M    force every job to model M
@@ -45,11 +47,14 @@ sys.path.insert(0, str(Path(__file__).parent))
 from validate import validate  # noqa: E402
 
 MODELS = {"seedance-2.0", "kling-3.0-omni", "wan-2.7-i2v", "veo-3.1",
-          "veed-fabric-1.0", "omnihuman-1.5"}
+          "veed-fabric-1.0", "omnihuman-1.5", "grok-imagine-video-1.5"}
 CLASSIFIER_HINTS = ("sensitive content", "e005", "real person", "content moderation")
 
 REPLICATE_SEEDANCE = "bytedance/seedance-2.0"
 REPLICATE_WAN = "wan-video/wan-2.7-i2v"
+REPLICATE_GROK = "xai/grok-imagine-video-1.5"
+# grok-imagine-video-1.5 is image-to-video only, with native synchronized audio.
+GROK_ASPECTS = {"auto", "16:9", "4:3", "1:1", "9:16", "3:4", "3:2", "2:3"}
 KLING_T2V = "fal-ai/kling-video/o3/standard/text-to-video"
 KLING_I2V = "fal-ai/kling-video/o3/standard/image-to-video"
 VEO_MODEL = "veo-3.1-generate-preview"
@@ -150,6 +155,52 @@ def run_wan(body: dict, out_dir: Path) -> bytes:
     if isinstance(body.get("seed"), int):
         wan_input["seed"] = body["seed"]
     output = replicate.run(REPLICATE_WAN, input=wan_input)
+    return output.read()
+
+
+def run_grok(body: dict, out_dir: Path) -> bytes:
+    """Grok Imagine Video 1.5 — image-to-video ONLY, native synchronized audio.
+
+    Needs an 'image' first frame; the prompt should describe motion, not
+    static description ("focus on motion, not appearance"). No generate_audio
+    toggle — audio is always produced. Maps Seedance-only aspect/resolution
+    values down to grok's supported set."""
+    import replicate
+    img = first_image(body)
+    if not img:
+        raise ValueError("grok-imagine-video-1.5 is image-to-video only — "
+                         "needs an 'image' (first frame)")
+    # Grok fetches the image URL server-side and rejects Replicate's
+    # auth-walled files.create URLs ("Invalid image format"), so inline a
+    # local first frame as a data URI instead of uploading it. Public
+    # http(s) URLs (e.g. a grok-imagine-image delivery URL) pass through.
+    if is_local_file(img):
+        ext = (Path(img).suffix.lower().lstrip(".") or "png")
+        mime = "jpeg" if ext in ("jpg", "jpeg") else ext
+        b64 = base64.b64encode(Path(img).read_bytes()).decode()
+        image_ref = f"data:image/{mime};base64,{b64}"
+        log(out_dir, f"  inlined {Path(img).name} as data URI for grok")
+    else:
+        image_ref = img
+    duration = body.get("duration", 5)
+    duration = 5 if duration in (-1, None) else max(1, min(15, int(duration)))
+    aspect = body.get("aspect_ratio", "auto")
+    aspect = {"adaptive": "auto", "21:9": "16:9", "9:21": "9:16"}.get(aspect, aspect)
+    if aspect not in GROK_ASPECTS:
+        aspect = "auto"
+    resolution = body.get("resolution", "720p")
+    if resolution not in ("720p", "480p"):  # grok caps at 720p
+        resolution = "720p"
+    grok_input = {
+        "prompt": body["prompt"],
+        "image": image_ref,
+        "duration": duration,
+        "aspect_ratio": aspect,
+        "resolution": resolution,
+    }
+    if isinstance(body.get("seed"), int):
+        grok_input["seed"] = body["seed"]
+    output = replicate.run(REPLICATE_GROK, input=grok_input)
     return output.read()
 
 
@@ -284,6 +335,7 @@ ADAPTERS = {
     "veo-3.1": run_veo,
     "veed-fabric-1.0": run_veed_fabric,
     "omnihuman-1.5": run_omnihuman,
+    "grok-imagine-video-1.5": run_grok,
 }
 
 

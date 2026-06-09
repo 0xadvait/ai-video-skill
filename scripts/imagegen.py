@@ -13,8 +13,9 @@ Models:
     flux-schnell  Replicate black-forest-labs/flux-schnell   (fast, default)
     flux-pro      Replicate black-forest-labs/flux-1.1-pro   (higher quality)
     imagen        Google Gemini imagen-4.0-generate-001      (top fidelity)
+    grok-image    Replicate xai/grok-imagine-image           (Grok stills/edits)
 
-Env: REPLICATE_API_TOKEN (flux*), GEMINI_API_KEY (imagen).
+Env: REPLICATE_API_TOKEN (flux*, grok-image), GEMINI_API_KEY (imagen).
 """
 from __future__ import annotations
 
@@ -28,7 +29,11 @@ from pathlib import Path
 FLUX_SCHNELL = "black-forest-labs/flux-schnell"
 FLUX_PRO = "black-forest-labs/flux-1.1-pro"
 IMAGEN = "imagen-4.0-generate-001"
+GROK_IMAGE = "xai/grok-imagine-image"
 ASPECTS = {"1:1", "16:9", "9:16", "4:3", "3:4", "21:9", "9:21"}
+# grok-imagine-image accepts these; 21:9/9:21 are flux/imagen-only.
+GROK_IMAGE_ASPECTS = {"1:1", "16:9", "9:16", "4:3", "3:4", "3:2", "2:3",
+                      "2:1", "1:2", "auto"}
 
 
 def run_flux(slug: str, prompt: str, aspect: str, n: int,
@@ -79,6 +84,32 @@ def run_imagen(prompt: str, aspect: str, n: int, out: Path) -> list[Path]:
     return paths
 
 
+def run_grok_image(prompt: str, aspect: str, n: int, out: Path) -> list[Path]:
+    """Grok Imagine Image — text-to-image (or image edit). Returns one URI per
+    call, so n images means n calls. Pass an existing image via the prompt
+    workflow only; this path is pure text-to-image."""
+    import replicate
+    grok_aspect = aspect if aspect in GROK_IMAGE_ASPECTS else "auto"
+    paths = []
+    for i in range(n):
+        output = replicate.run(GROK_IMAGE, input={
+            "prompt": prompt,
+            "aspect_ratio": grok_aspect,
+        })
+        item = output[0] if isinstance(output, list) else output
+        if hasattr(item, "read"):
+            data = item.read()
+        else:  # plain URL string fallback
+            req = urllib.request.Request(str(item),
+                                         headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=120) as r:
+                data = r.read()
+        p = out if n == 1 else out.with_name(f"{out.stem}_{i}{out.suffix}")
+        p.write_bytes(data)
+        paths.append(p)
+    return paths
+
+
 def main() -> int:
     args = sys.argv[1:]
     if not args:
@@ -117,8 +148,10 @@ def main() -> int:
         paths = run_flux(FLUX_PRO, prompt, aspect, n, out)
     elif model == "imagen":
         paths = run_imagen(prompt, aspect, n, out)
+    elif model == "grok-image":
+        paths = run_grok_image(prompt, aspect, n, out)
     else:
-        print(f"ERROR: --model must be flux-schnell, flux-pro or imagen")
+        print(f"ERROR: --model must be flux-schnell, flux-pro, imagen or grok-image")
         return 1
 
     for p in paths:
